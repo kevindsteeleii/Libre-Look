@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../App.scss';
 /* NOTE: will expand later so starting w/ a class component and will become more of a HOC */
 class SearchBar extends React.Component{
   state = {
@@ -17,7 +17,7 @@ class SearchBar extends React.Component{
     return(<div id="searchBar">
       <div className="simple-search">
         <input type="text" name="search-input-text" id="search-input-text" placeholder="Add any key word to look for a related book please..."/>
-        
+        <button>Submit</button>
       </div>
     </div>);
   }
