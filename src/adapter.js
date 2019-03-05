@@ -3,9 +3,13 @@ const baseURL = 'https://www.googleapis.com/books/v1/volumes?q='
 
 export const search = async (searchTerm) => {
   searchTerm = typeof searchTerm === 'object' ? buildQuery(searchTerm): formatQuery(searchTerm);
-  const response = await axios.get(baseURL + searchTerm);
+  const response = await axios.get(baseURL + searchTerm, {
+    maxContentLength: 50
+  });
   const totalItems = response.data.totalItems;
-  const books = totalItems > 0 ?  response.data.items : null;
+  const books = totalItems > 0 
+    ?  response.data.items
+    : null;
   return books;
 }
 
