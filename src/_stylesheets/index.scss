@@ -1,3 +1,5 @@
+$light-teal: #0f905ad7;
+
 body {
   margin: 0;
   padding: 0;
@@ -12,11 +14,9 @@ p, a {
   margin: inherit;
 }
 
-// body, :root, html {
-//   min-height: 100vh;
-//   width: 100vw;
-//   max-width: 100vw;
-// }
+button {
+  border-radius: 0px;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

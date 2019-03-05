@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from './searchBar';
-import '../App.scss';
+import '../_stylesheets/App.scss';
 
 class TopBar extends React.Component{
   state = {
