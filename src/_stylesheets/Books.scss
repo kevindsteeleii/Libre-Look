@@ -1,20 +1,16 @@
-@import 'index.scss';
+@import './index.scss';
+@import './App.scss';
 
-.App {
-  padding: 5vh auto;
-  text-align: center;
-  height: 100vh;
-  background-color: #d8d8d8;
-}
-
-div#top-bar {
-  height: 20vh;
-  margin-bottom: 7vh;
-  background-color: red;
+div#books-container {
+  margin: 3vw auto;
+  width: 80vw;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 div.book-card {
   margin: 0 auto;
+  margin-bottom: 4vw;
   display: flex;
   flex-direction: row;
   width: 35vw;
@@ -27,8 +23,8 @@ div.book-card {
 /* will have to calculate approx. dist from edge and center later for responsiveness */
 img.thumbnail {
   position: relative;
-  left: 15px;
-  bottom: 30px;
+  left: 1vw;
+  bottom: 2vw;
   box-shadow: rgba(0,0,0,.4) 6px 7px 6px;
 }
 
@@ -39,12 +35,16 @@ div.info-dump {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  text-align: justify;
+  text-align: start;
   color: #5c5c5c;
 
   *.text {
     padding-left: 20px;
     display: block;
+    font-weight: 200;
+  }
+  *.book-title {
+    font-weight: 350;
   }
   a {
     margin-left: 20px;
@@ -54,7 +54,7 @@ div.info-dump {
     min-width: 10vw;
     padding: 10px 12px;
     border-radius: 3.5px;
-    background-color: #0f905ad7;
+    background-color: $light-teal;
     color: white;
     font-weight: 600px;
     font-size: 1.3rem;
@@ -70,3 +70,36 @@ p.book-title {
   font-size: 1.2rem;
 }
 
+@media (max-width: 1000px) {
+  div.book-card {
+    margin: 8vh auto;
+    width: 75vw;
+  }
+}
+
+@media (max-width:875px) {
+  div#books-container {
+    margin: 3vw auto;
+    // min-width: 80vw;
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+
+  div.book-card {
+    margin: 6vh auto;
+    padding: 4vh 0;
+    display: flex;
+    flex-direction: column;
+    // height: 40vw;
+    width: 80vw;
+    border: .7px rgba(0, 0, 0, .3) solid;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, .3) 5px 4px 6px;
+    background-color: white;
+  }
+
+  img.thumbnail {
+    margin: 1vh auto;
+  }
+}
